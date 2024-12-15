@@ -25,19 +25,18 @@ using namespace std;
 %token FALSE
 %token RETURN
 %token IF
-%right ELSE
 %token WHILE
 %token BREAK
 %token CONTINUE
 %token SC
 %token COMMA
-%right ASSIGN
 %token ID
 %token NUM
 %token NUM_B
 %token STRING
 %token COMMENT
 
+%right ASSIGN
 %left OR
 %left AND
 %left EQ NE
@@ -46,6 +45,7 @@ using namespace std;
 %left DIV MUL
 %right NOT
 %left LPAREN RPAREN LBRACE RBRACE
+%nonassoc ELSE
 %%
 
 // While reducing the start variable, set the root of the AST
