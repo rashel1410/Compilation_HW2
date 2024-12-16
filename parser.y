@@ -255,24 +255,91 @@ Exp :
     }
     | ID
     {
-        $$ = make_shared<ast::ID>($1);
+        $$ = dynamic_pointer_cast<ast::ID>($1);
     }
     | Call
+    {
+        $$ = dynamic_pointer_cast<ast::Call>($1);
+    }
     | NUM
+    {
+        $$ = dynamic_pointer_cast<ast::Num>($1);
+    }
     | NUM_B
+    {
+        $$ = dynamic_pointer_cast<ast::NumB>($1);
+    }
     | STRING
+    {
+        $$ = dynamic_pointer_cast<ast::String>($1);
+    }
     | TRUE
+    {
+        $$ = make_shared<ast::Bool>(1);
+    }
     | FALSE
+    {
+        $$ = make_shared<ast::Bool>(0);
+    }
     | NOT Exp
+    {
+        auto exp_ptr = dynamic_pointer_cast<ast::Exp>($2);
+        $$ = make_shared<ast::Not>(exp_ptr);
+    }
     | Exp AND Exp
+    {
+        auto left_exp_ptr = dynamic_pointer_cast<ast::Exp>($1);
+        auto right_exp_ptr = dynamic_pointer_cast<ast::Exp>($3);
+        $$ = make_shared<ast::And>(left_exp_ptr, right_exp_ptr);
+    }
     | Exp OR Exp
+    {
+        auto left_exp_ptr = dynamic_pointer_cast<ast::Exp>($1);
+        auto right_exp_ptr = dynamic_pointer_cast<ast::Exp>($3);
+        $$ = make_shared<ast::Or>(left_exp_ptr, right_exp_ptr);
+    }
     | Exp EQ Exp
+    {
+        auto left_exp_ptr = dynamic_pointer_cast<ast::Exp>($1);
+        auto right_exp_ptr = dynamic_pointer_cast<ast::Exp>($3);
+        $$ = make_shared<ast::RelOp>(left_exp_ptr, right_exp_ptr, ast::RelOpType::EQ);
+    }
     | Exp NE Exp
+    {
+        auto left_exp_ptr = dynamic_pointer_cast<ast::Exp>($1);
+        auto right_exp_ptr = dynamic_pointer_cast<ast::Exp>($3);
+        $$ = make_shared<ast::RelOp>(left_exp_ptr, right_exp_ptr, ast::RelOpType::NE);
+    }
     | Exp LT Exp
+    {
+        auto left_exp_ptr = dynamic_pointer_cast<ast::Exp>($1);
+        auto right_exp_ptr = dynamic_pointer_cast<ast::Exp>($3);
+        $$ = make_shared<ast::RelOp>(left_exp_ptr, right_exp_ptr, ast::RelOpType::LT);
+    }
     | Exp GT Exp
+    {
+        auto left_exp_ptr = dynamic_pointer_cast<ast::Exp>($1);
+        auto right_exp_ptr = dynamic_pointer_cast<ast::Exp>($3);
+        $$ = make_shared<ast::RelOp>(left_exp_ptr, right_exp_ptr, ast::RelOpType::GT);
+    }
     | Exp LE Exp
+    {
+        auto left_exp_ptr = dynamic_pointer_cast<ast::Exp>($1);
+        auto right_exp_ptr = dynamic_pointer_cast<ast::Exp>($3);
+        $$ = make_shared<ast::RelOp>(left_exp_ptr, right_exp_ptr, ast::RelOpType::LE);
+    }
     | Exp GE Exp
+    {
+        auto left_exp_ptr = dynamic_pointer_cast<ast::Exp>($1);
+        auto right_exp_ptr = dynamic_pointer_cast<ast::Exp>($3);
+        $$ = make_shared<ast::RelOp>(left_exp_ptr, right_exp_ptr, ast::RelOpType::GE);
+    }
     | LPAREN Type RPAREN Exp
+    {
+        auto type_ptr = dynamic_pointer_cast<ast::Type>($2);
+        auto exp_ptr = dynamic_pointer_cast<ast::Exp>($4);
+        $$ = make_shared<ast::Cast>(exp_ptr, type_ptr);
+    }
 ;
 
 
