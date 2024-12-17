@@ -1,0 +1,153 @@
+// Entry point for precedence testing
+int main() {
+    print("Starting comprehensive precedence tests...");
+
+    // Initialize variables
+    int a = 5;
+    int b = 10;
+    int c = 15;
+    int d = 20;
+    int e = 25;
+    int f = 30;
+    byte x = 3b;
+    byte y = 7b;
+    bool flag1 = true;
+    bool flag2 = false;
+
+    // Arithmetic Precedence Tests
+    arithmeticPrecedence(a, b, c, d, e, f, x, y);
+
+    // Relational Precedence Tests
+    relationalPrecedence(a, b, c, d, e);
+
+    // Logical Precedence Tests
+    logicalPrecedence(flag1, flag2, a, b, c, d);
+
+    // Mixed Operator Precedence Tests
+    mixedPrecedence(a, b, c, d, e, f, x, y, flag1, flag2);
+
+    return 0;
+}
+
+// Arithmetic Precedence Tests
+void arithmeticPrecedence(int a, int b, int c, int d, int e, int f, byte x, byte y) {
+    int result;
+
+    // Basic precedence
+    result = a + b * c; // Multiplication before addition
+    print("Arithmetic Result 1:", result);
+
+    result = (a + b) * c; // Parentheses change precedence
+    print("Arithmetic Result 2:", result);
+
+    // Nested parentheses
+    result = ((a + b) * (c - d)) / (e + f);
+    print("Arithmetic Result 3:", result);
+
+    result = a + (b * (c - (d / e)) + f);
+    print("Arithmetic Result 4:", result);
+
+    result = (((a + (b * c)) - (d / e)) + f) * x;
+    print("Arithmetic Result 5:", result);
+
+    result = ((((a + b) * c) - d) / e) + ((f * x) - y);
+    print("Arithmetic Result 6:", result);
+
+    // Deeply nested
+    result = ((((a + (b * (c - d))) / e) + f) * x) - ((y + b) * (c - f));
+    print("Arithmetic Result 7:", result);
+}
+
+// Relational Precedence Tests
+void relationalPrecedence(int a, int b, int c, int d, int e) {
+    bool result;
+
+    // Relational operators
+    result = a < b and b <= c; // Logical AND after relational
+    print("Relational Result 1:", result);
+
+    result = (a > b) or (b < c) and (c != d);
+    print("Relational Result 2:", result);
+
+    // Nested relational and arithmetic
+    result = ((a + b) > (c - d)) and ((d / e) <= (a * c));
+    print("Relational Result 3:", result);
+
+    result = (((a + b) * c) >= ((d - e) / b)) or ((e + c) < (d * a));
+    print("Relational Result 4:", result);
+
+    result = (((a - b) + c) > ((d / e) - (a * b))) and ((c + e) != (b - d));
+    print("Relational Result 5:", result);
+}
+
+// Logical Precedence Tests
+void logicalPrecedence(bool flag1, bool flag2, int a, int b, int c, int d) {
+    bool result;
+
+    // Logical operators precedence
+    result = not flag1 or flag2 and a < b;
+    print("Logical Result 1:", result);
+
+    result = (not flag1 or (flag2 and (a > b)));
+    print("Logical Result 2:", result);
+
+    result = ((not (flag1 and flag2)) or (a < b)) and (b > c);
+    print("Logical Result 3:", result);
+
+    // Deeply nested logical expressions
+    result = (((not flag1 or flag2) and (a > b)) or (not (c < d)));
+    print("Logical Result 4:", result);
+
+    result = ((((not flag1 and not flag2) or (a + b > c - d)) and (c * d <= b)));
+    print("Logical Result 5:", result);
+}
+
+// Mixed Operator Precedence Tests
+void mixedPrecedence(int a, int b, int c, int d, int e, int f, byte x, byte y, bool flag1, bool flag2) {
+    int result;
+    bool logicalResult;
+
+    // Mixed precedence: arithmetic, relational, and logical
+    result = (a + b * c) - ((d / e) + f);
+    logicalResult = (result > a) and not (flag1 or flag2);
+    print("Mixed Result 1:", result, "Logical:", logicalResult);
+
+    // Deeply nested mixed precedence
+    result = (((a + b) * (c - d)) / (e + f)) - (a * c) + b;
+    logicalResult = not (result > a) or (flag1 and (flag2 or a < b));
+    print("Mixed Result 2:", result, "Logical:", logicalResult);
+
+    // All operators
+    result = (((a + b) * c) - ((d / e) + f)) * ((a - b) + (c * d)) / f;
+    logicalResult = (result > a and not flag1) or (flag2 and ((b + c) < d));
+    print("Mixed Result 3:", result, "Logical:", logicalResult);
+
+    // Extremely complex
+    result = (((((a + b) * c) - (d / e)) + f) * (x - y)) - (((b + c) * (d - a)) / f);
+    logicalResult = (((result > a) and (b > c)) or (not flag1 and flag2)) and ((a < b) or (d > c));
+    print("Mixed Result 4:", result, "Logical:", logicalResult);
+
+    result = ((((a * b) + (c / d)) - ((e + f) * (x - y))) / ((a + b) - c)) + (((b * d) / e) - f);
+    logicalResult = (result > b or not (flag1 and flag2)) and (((a + b) > c) or (e > f));
+    print("Mixed Result 5:", result, "Logical:", logicalResult);
+}
+
+// Stress test deeply nested parentheses with precedence
+void stressTestPrecedence(int a, int b, int c, int d, int e, int f, byte x, byte y, bool flag1, bool flag2) {
+    int result;
+    bool logicalResult;
+
+    // Long, deeply nested arithmetic
+    result = (((((((a + b) * c) - d) / e) + f) * x) - y) + ((b * c) - (d / e));
+    print("Stress Arithmetic 1:", result);
+
+    // Long logical with relational and arithmetic
+    logicalResult = ((((a + b) > c) and (d < e)) or not flag1) and (x + y < f);
+    print("Stress Logical 1:", logicalResult);
+
+    // Mixed everything
+    result = (((((((a + b) * (c - d)) / (e + f)) * x) - y) + ((a - b) * (c + d))) - (((e * f) + (x / y)) - a));
+    logicalResult = (((result > a) and not flag1) or (flag2 and (b > c))) and (e > f or x < y);
+    print("Stress Mixed 1:", result, "Logical:", logicalResult);
+}
+

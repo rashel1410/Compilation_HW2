@@ -1,0 +1,1 @@
+int doubleValue(int) { return x * 2; }

@@ -1,0 +1,1 @@
+void assignVar() { int x = 10; }

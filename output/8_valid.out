@@ -1,0 +1,16 @@
+└──Funcs
+    └──FuncDecl
+        ├──ID: sum
+        ├──Type: int
+        ├──Formals
+        │   ├──Formal
+        │   │   ├──ID: b
+        │   │   └──Type: int
+        │   └──Formal
+        │       ├──ID: a
+        │       └──Type: int
+        └──Statements
+            └──Return
+                └──BinOp: +
+                    ├──ID: a
+                    └──ID: b

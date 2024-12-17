@@ -1,0 +1,191 @@
+// Entry point of the program
+int main() {
+    print("Starting the ultimate FanC test...");
+
+    // Initialize some variables
+    int x = 10;
+    int y = 20;
+    int z = 30;
+    byte b1 = 1b;
+    byte b2 = 4b;
+    bool flag1 = true;
+    bool flag2 = false;
+
+    // Call test functions
+    fullTestSuite(x, y, z, b1, b2, flag1, flag2);
+    extendedTests(x, y, z);
+
+    return 0;
+}
+
+// Full test suite for all cases
+void fullTestSuite(int x, int y, int z, byte b1, byte b2, bool flag1, bool flag2) {
+    testArithmetic(x, y, z, b1, b2);
+    testLogical(flag1, flag2, x, y);
+    testLoops(x, y, z);
+    testRecursion(x);
+    testNestedFunctions(x, y, z, b1, b2);
+    testAdvancedConditionals(x, y, z);
+    testComplexCalls(x, y, z);
+    testTypeCasting();
+    testLongConditionals(flag1, flag2, x, y, z);
+}
+
+// Test arithmetic operators and precedence
+void testArithmetic(int x, int y, int z, byte b1, byte b2) {
+    int i = 0;
+    while (i < 100) {
+        int result = x + y * z / (x - z) + (y * z) - (x / y) + i * b1 - b2;
+        result = result * (x + (y / (z - x * 2))) + b1 - b2;
+        printResult(result);
+        i = i + 1;
+    }
+}
+
+// Test logical operators with long chained conditions
+void testLogical(bool flag1, bool flag2, int x, int y) {
+    int i = 0;
+    while (i < 50) {
+        if (flag1 and not flag2 or x > y or i < x) {
+            print("Logical condition passed for i:", i);
+        } else {
+            print("Logical condition failed for i:", i);
+        }
+        i = i + 1;
+    }
+}
+
+// Test nested and large loops
+void testLoops(int x, int y, int z) {
+    int i = 0;
+    while (i < 100) {
+        int j = 0;
+        while (j < 50) {
+            int temp = (i * j + z) / (x - y + 1);
+            printResult(temp);
+            j = j + 1;
+        }
+        i = i + 1;
+    }
+}
+
+// Recursive functions for stress-testing
+int recursiveFactorial(int n) {
+    if (n <= 1) return 1;
+    return n * recursiveFactorial(n - 1);
+}
+
+int recursiveFibonacci(int n) {
+    if (n <= 1) return n;
+    return recursiveFibonacci(n - 1) + recursiveFibonacci(n - 2);
+}
+
+void testRecursion(int n) {
+    int i = 0;
+    while (i < 15) {
+        int fact = recursiveFactorial(i);
+        int fib = recursiveFibonacci(i);
+        print("Factorial of", i, ":", fact);
+        print("Fibonacci of", i, ":", fib);
+        i = i + 1;
+    }
+}
+
+// Nested function calls with multiple levels
+int nestedFunctionOne(int a, int b) {
+    return nestedFunctionTwo(a + 1, b - 1);
+}
+
+int nestedFunctionTwo(int x, int y) {
+    return nestedFunctionThree(x * y, x + y);
+}
+
+int nestedFunctionThree(int m, int n) {
+    if (m > n) return m - n;
+    return n - m + nestedFunctionOne(m, n);
+}
+
+void testNestedFunctions(int x, int y, int z, byte b1, byte b2) {
+    int i = 0;
+    while (i < 50) {
+        int result = nestedFunctionOne(x + i, y) + nestedFunctionTwo(z, b1) + nestedFunctionThree(b2, x - i);
+        printResult(result);
+        i = i + 1;
+    }
+}
+
+// Advanced conditionals with nested structures
+void testAdvancedConditionals(int x, int y, int z) {
+    int i = 0;
+    while (i < 50) {
+        if (x > y) {
+            if (y < z) {
+                if (z > x) {
+                    printResult(x * y * z);
+                } else {
+                    printResult(x + y + z);
+                }
+            } else {
+                printResult((x - y) * (z + x));
+            }
+        } else {
+            if (z > y) {
+                printResult(z * z);
+            } else {
+                printResult(y + y);
+            }
+        }
+        i = i + 1;
+    }
+}
+
+// Complex calls with mixed precedence
+int complexCall(int a, int b, int c) {
+    return (a + b) * (c - b) / (a + c) + (b * c - a / c);
+}
+
+void testComplexCalls(int x, int y, int z) {
+    int i = 0;
+    while (i < 100) {
+        int result = complexCall(x, y, z);
+        printResult(result);
+
+        result = complexCall(complexCall(x, y, z), recursiveFactorial(y), recursiveFibonacci(x));
+        printResult(result);
+        i = i + 1;
+    }
+}
+
+// Type casting and mixed expressions
+void testTypeCasting() {
+    byte b = 2b;
+    int i = 0;
+    while (i < 100) {
+        int x = (int)b + i;
+        printResult(x);
+        i = i + 1;
+    }
+}
+
+// Long conditionals with multiple operators
+void testLongConditionals(bool flag1, bool flag2, int x, int y, int z) {
+    int i = 0;
+    while (i < 100) {
+        if (flag1 and x + y > z or y - z < x and not flag2 or i > x and y <= z) {
+            print("Condition passed for i:", i);
+        } else {
+            print("Condition failed for i:", i);
+        }
+        i = i + 1;
+    }
+}
+
+// Extended tests for additional stress
+void extendedTests(int x, int y, int z) {
+    int i = 0;
+    while (i < 50) {
+        fullTestSuite(x + i, y - i, z + i, 3b, 5b, true, false);
+        i = i + 1;
+    }
+}
+

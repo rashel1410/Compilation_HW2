@@ -1,0 +1,10 @@
+└──Funcs
+    └──FuncDecl
+        ├──ID: main
+        ├──Type: int
+        ├──Formals
+        └──Statements
+            └──Call
+                ├──ID: print
+                └──ExpList
+                    └──String: Hello, World!

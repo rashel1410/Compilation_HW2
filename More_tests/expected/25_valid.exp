@@ -1,0 +1,10 @@
+└──Funcs
+    └──FuncDecl
+        ├──ID: continueTest
+        ├──Type: void
+        ├──Formals
+        └──Statements
+            └──While
+                ├──Num: 1
+                └──Statements
+                    └──Continue

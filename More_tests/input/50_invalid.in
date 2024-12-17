@@ -1,0 +1,192 @@
+// Entry point of the program
+int main() {
+    print("Starting another comprehensive FanC test..."); // Begin the program
+
+    // Initialize unique variables
+    int alpha = 15; // Alpha variable for arithmetic
+    int beta = 25; // Beta variable for logical tests
+    int gamma = 35; // Gamma variable for conditionals
+    byte delta = 3b; // Byte variable for type casting
+    byte epsilon = 7b; // Another byte variable
+    bool omega = false; // Boolean for flags
+    bool sigma = true; // Another flag
+
+    // Call the test suite
+    uniqueTestSuite(alpha, beta, gamma, delta, epsilon, omega, sigma); // Run the main test suite
+    additionalUniqueTests(alpha, beta, gamma); // Extended tests
+
+    return 0; // Exit the program
+}
+
+// Full unique test suite
+void uniqueTestSuite(int alpha, int beta, int gamma, byte delta, byte epsilon, bool omega, bool sigma) {
+    // Call various test functions
+    uniqueArithmeticTests(alpha, beta, gamma, delta, epsilon); // Arithmetic
+    uniqueLogicalTests(omega, sigma, alpha, beta); // Logical tests
+    uniqueLoopTests(alpha, beta, gamma); // Loop tests
+    uniqueRecursiveTests(alpha); // Recursive function tests
+    uniqueNestedFunctionTests(alpha, beta, gamma, delta, epsilon); // Nested function calls
+    uniqueConditionalTests(alpha, beta, gamma); // Conditionals
+    uniqueComplexCallTests(alpha, beta, gamma); // Complex calls
+    uniqueTypeCastingTests(); // Type casting
+    uniqueLongConditionalTests(omega, sigma, alpha, beta, gamma); // Long conditionals
+}
+
+// Test arithmetic operators and precedence with unique variables
+void uniqueArithmeticTests(int alpha, int beta, int gamma, byte delta, byte epsilon) {
+    int iter = 0; // Iterator variable
+    while (iter < 100) { // Loop for arithmetic stress testing
+        int result = alpha + beta * gamma / (alpha - gamma) + (beta * gamma) - (alpha / beta) + iter * delta - epsilon; // Complex expression
+        result = result * (alpha + (beta / (gamma - alpha * 2))) + delta - epsilon; // More precedence testing
+        printResult(result); // Output the result
+        iter = iter + 1; // Increment the iterator
+    }
+}
+
+// Logical operators with unique variables
+void uniqueLogicalTests(bool omega, bool sigma, int alpha, int beta) {
+    int iter = 0; // Initialize iterator
+    while (iter < 50) { // Test logical operators
+        if (omega and not sigma or alpha > beta or iter < alpha) { // Complex logical chain
+            print("Logical test passed for iter:", iter); // Log success
+        } else {
+            print("Logical test failed for iter:", iter); // Log failure
+        }
+        iter = iter + 1; // Increment iterator
+    }
+}
+
+// Nested and large loop tests with unique variables
+void uniqueLoopTests(int alpha, int beta, int gamma) {
+    int outer = 0; // Outer loop iterator
+    while (outer < 100) { // Outer loop
+        int inner = 0; // Inner loop iterator
+        while (inner < 50) { // Inner loop
+            int tempResult = (outer * inner + gamma) / (alpha - beta + 1); // Complex calculation
+            printResult(tempResult); // Print the temporary result
+            inner = inner + 1; // Increment inner loop iterator
+        }
+        outer = outer + 1; // Increment outer loop iterator
+    }
+}
+
+// Recursive function tests with unique variables
+int uniqueFactorial(int number) {
+    if (number <= 1) return 1; // Base case
+    return number * uniqueFactorial(number - 1); // Recursive step
+}
+
+int uniqueFibonacci(int term) {
+    if (term <= 1) return term; // Base case
+    return uniqueFibonacci(term - 1) + uniqueFibonacci(term - 2); // Recursive step
+}
+
+void uniqueRecursiveTests(int alpha) {
+    int iter = 0; // Iterator for recursion tests
+    while (iter < 15) { // Loop through test cases
+        int fact = uniqueFactorial(iter); // Compute factorial
+        int fib = uniqueFibonacci(iter); // Compute Fibonacci
+        print("Factorial of", iter, ":", fact); // Print factorial
+        print("Fibonacci of", iter, ":", fib); // Print Fibonacci
+        iter = iter + 1; // Increment iterator
+    }
+}
+
+// Nested function calls with unique variables
+int uniqueNestedLevelOne(int delta, int epsilon) {
+    return uniqueNestedLevelTwo(delta + 1, epsilon - 1); // First level of nesting
+}
+
+int uniqueNestedLevelTwo(int alpha, int beta) {
+    return uniqueNestedLevelThree(alpha * beta, alpha + beta); // Second level of nesting
+}
+
+int uniqueNestedLevelThree(int gamma, int delta) {
+    if (gamma > delta) return gamma - delta; // Conditional difference
+    return delta - gamma + uniqueNestedLevelOne(gamma, delta); // Recursive-like call
+}
+
+void uniqueNestedFunctionTests(int alpha, int beta, int gamma, byte delta, byte epsilon) {
+    int iter = 0; // Iterator
+    while (iter < 50) { // Loop through nested function calls
+        int result = uniqueNestedLevelOne(alpha + iter, beta) + uniqueNestedLevelTwo(gamma, delta) + uniqueNestedLevelThree(epsilon, alpha - iter); // Complex nesting
+        printResult(result); // Output result
+        iter = iter + 1; // Increment iterator
+    }
+}
+
+// Advanced conditionals with unique variables
+void uniqueConditionalTests(int alpha, int beta, int gamma) {
+    int iter = 0; // Initialize iterator
+    while (iter < 50) { // Loop through conditionals
+        if (alpha > beta) { // Check alpha > beta
+            if (beta < gamma) { // Nested conditional
+                if (gamma > alpha) { // Deeper nesting
+                    printResult(alpha * beta * gamma); // Complex result
+                } else {
+                    printResult(alpha + beta + gamma); // Alternate result
+                }
+            } else {
+                printResult((alpha - beta) * (gamma + alpha)); // Another case
+            }
+        } else {
+            if (gamma > beta) { // Simple condition
+                printResult(gamma * gamma); // Output gamma squared
+            } else {
+                printResult(beta + beta); // Output beta doubled
+            }
+        }
+        iter = iter + 1; // Increment iterator
+    }
+}
+
+// Complex calls with unique variables
+int uniqueComplexCall(int alpha, int beta, int gamma) {
+    return (alpha + beta) * (gamma - beta) / (alpha + gamma) + (beta * gamma - alpha / gamma); // Complex precedence
+}
+
+void uniqueComplexCallTests(int alpha, int beta, int gamma) {
+    int iter = 0; // Initialize iterator
+    while (iter < 100) { // Loop through calls
+        int result = uniqueComplexCall(alpha, beta, gamma); // Single complex call
+        printResult(result); // Print result
+
+        result = uniqueComplexCall(uniqueComplexCall(alpha, beta, gamma), uniqueFactorial(beta), uniqueFibonacci(alpha)); // Nested complex call
+        printResult(result); // Print result
+        iter = iter + 1; // Increment iterator
+    }
+}
+
+// Type casting tests with unique variables
+void uniqueTypeCastingTests() {
+    byte byteVar = 5b; // Byte variable for casting
+    int iter = 0; // Iterator
+    while (iter < 100) { // Loop through type casting
+        int castResult = (int)byteVar + iter; // Cast and compute
+        printResult(castResult); // Output result
+        iter = iter + 1; // Increment iterator
+    }
+}
+
+// Long conditionals with unique variables
+void uniqueLongConditionalTests(bool omega, bool sigma, int alpha, int beta, int gamma) {
+    int iter = 0; // Iterator
+    while (iter < 100) { // Loop through long conditionals
+        if (omega and alpha + beta > gamma or beta - gamma < alpha and not sigma or iter > alpha and beta <= gamma) { // Long condition
+            print("Condition passed for iter:", iter); // Log success
+        } else {
+            print("Condition failed for iter:", iter); // Log failure
+        }
+        iter = iter + 1; // Increment iterator
+    }
+}
+
+// Extended tests with unique variables
+void additionalUniqueTests(int alpha, int beta, int gamma) {
+    string str1="HI";
+    while (iter < 50) { // Extended test loop
+        uniqueTestSuite(alpha + iter, beta - iter, gamma + iter, 3b, 5b, false, true); // Recursive test calls
+        iter = iter + 1; // Increment iterator
+    }
+}
+

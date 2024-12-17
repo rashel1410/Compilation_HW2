@@ -1,0 +1,4 @@
+
+void conditional() {
+    if 1 > 0) print();
+}

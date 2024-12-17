@@ -1,0 +1,10 @@
+└──Funcs
+    └──FuncDecl
+        ├──ID: main
+        ├──Type: int
+        ├──Formals
+        └──Statements
+            └──VarDecl
+                ├──ID: b
+                ├──Type: byte
+                └──NumB: 101

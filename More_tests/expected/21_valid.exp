@@ -1,0 +1,13 @@
+└──Funcs
+    └──FuncDecl
+        ├──ID: conditional
+        ├──Type: void
+        ├──Formals
+        └──Statements
+            └──If
+                ├──RelOp: >
+                │   ├──Num: 1
+                │   └──Num: 0
+                └──Call
+                    ├──ID: print
+                    └──ExpList

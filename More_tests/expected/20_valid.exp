@@ -1,0 +1,8 @@
+└──Funcs
+    └──FuncDecl
+        ├──ID: getValue
+        ├──Type: int
+        ├──Formals
+        └──Statements
+            └──Return
+                └──Num: 5

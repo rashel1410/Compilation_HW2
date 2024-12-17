@@ -1,0 +1,13 @@
+└──Funcs
+    └──FuncDecl
+        ├──ID: loop
+        ├──Type: void
+        ├──Formals
+        └──Statements
+            └──While
+                ├──RelOp: >
+                │   ├──Num: 1
+                │   └──Num: 0
+                └──Call
+                    ├──ID: print
+                    └──ExpList

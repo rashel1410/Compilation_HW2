@@ -1,0 +1,45 @@
+void main() {
+    bool c = true;
+    if (not c) {
+        int x = return6();
+        printi(x);
+        x = (int) e;
+    }
+    else if (true and false) {
+    	if (false) main(); else if (false) main(); else {
+		byte b = 3b;
+		while (false) {
+			int a = 2 * 3 + (((b + 3) * 5) / 4);
+			int result = existingFunction(a, b, c);
+			return result;
+		}
+		while (true) {
+			break;
+			return;
+		}
+	}
+    } else
+
+
+
+
+
+    // comment
+    	c = false;
+}
+
+int func(){
+	~ a=3;
+}
+
+
+int existingFunction(int a, byte b, bool c) {
+	if (a <= 5 or a == 6 or b > 3 or not c) {
+		print(str);
+		return 420;
+	} else if (isProfanity(69) == true and c) {
+		print("not cool bro");
+		return 0 - 420;
+	}
+	return 666;
+}

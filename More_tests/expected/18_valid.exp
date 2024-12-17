@@ -1,0 +1,9 @@
+└──Funcs
+    └──FuncDecl
+        ├──ID: makeCall
+        ├──Type: void
+        ├──Formals
+        └──Statements
+            └──Call
+                ├──ID: print
+                └──ExpList

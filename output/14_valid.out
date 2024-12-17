@@ -1,0 +1,11 @@
+└──Funcs
+    └──FuncDecl
+        ├──ID: block
+        ├──Type: void
+        ├──Formals
+        └──Statements
+            └──Statements
+                └──VarDecl
+                    ├──ID: x
+                    ├──Type: int
+                    └──Num: 5

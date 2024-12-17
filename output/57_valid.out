@@ -1,0 +1,12 @@
+└──Funcs
+    └──FuncDecl
+        ├──ID: main
+        ├──Type: void
+        ├──Formals
+        └──Statements
+            ├──VarDecl
+            │   ├──ID: x
+            │   ├──Type: int
+            │   └──Bool: true
+            └──Return
+                └──Num: 0

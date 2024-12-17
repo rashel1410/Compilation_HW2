@@ -1,0 +1,1 @@
+int sumThree(int a, b, c) { return a + b + c; }

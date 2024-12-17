@@ -1,0 +1,772 @@
+└──Funcs
+    ├──FuncDecl
+    │   ├──ID: main
+    │   ├──Type: int
+    │   ├──Formals
+    │   └──Statements
+    │       ├──VarDecl
+    │       │   ├──ID: x
+    │       │   ├──Type: int
+    │       │   └──Num: 10
+    │       ├──VarDecl
+    │       │   ├──ID: y
+    │       │   ├──Type: int
+    │       │   └──Num: 20
+    │       ├──VarDecl
+    │       │   ├──ID: z
+    │       │   ├──Type: int
+    │       │   └──Num: 30
+    │       ├──VarDecl
+    │       │   ├──ID: b1
+    │       │   ├──Type: byte
+    │       │   └──NumB: 1
+    │       ├──VarDecl
+    │       │   ├──ID: b2
+    │       │   ├──Type: byte
+    │       │   └──NumB: 4
+    │       ├──VarDecl
+    │       │   ├──ID: flag1
+    │       │   ├──Type: bool
+    │       │   └──Bool: true
+    │       ├──VarDecl
+    │       │   ├──ID: flag2
+    │       │   ├──Type: bool
+    │       │   └──Bool: false
+    │       ├──If
+    │       │   ├──Or
+    │       │   │   ├──And
+    │       │   │   │   ├──RelOp: >
+    │       │   │   │   │   ├──ID: x
+    │       │   │   │   │   └──ID: y
+    │       │   │   │   └──RelOp: <
+    │       │   │   │       ├──ID: y
+    │       │   │   │       └──ID: z
+    │       │   │   └──RelOp: >
+    │       │   │       ├──BinOp: +
+    │       │   │       │   ├──ID: x
+    │       │   │       │   └──ID: y
+    │       │   │       └──BinOp: *
+    │       │   │           ├──ID: z
+    │       │   │           └──Num: 2
+    │       │   ├──Statements
+    │       │   │   └──Assign
+    │       │   │       ├──ID: x
+    │       │   │       └──BinOp: -
+    │       │   │           ├──BinOp: +
+    │       │   │           │   ├──ID: x
+    │       │   │           │   └──BinOp: *
+    │       │   │           │       ├──ID: y
+    │       │   │           │       └──ID: z
+    │       │   │           └──BinOp: /
+    │       │   │               ├──ID: b1
+    │       │   │               └──ID: b2
+    │       │   └──If
+    │       │       ├──Or
+    │       │       │   ├──RelOp: ==
+    │       │       │   │   ├──ID: x
+    │       │       │   │   └──ID: y
+    │       │       │   └──And
+    │       │       │       ├──RelOp: !=
+    │       │       │       │   ├──ID: y
+    │       │       │       │   └──ID: z
+    │       │       │       └──RelOp: <=
+    │       │       │           ├──ID: b1
+    │       │       │           └──ID: b2
+    │       │       ├──Statements
+    │       │       │   └──Assign
+    │       │       │       ├──ID: x
+    │       │       │       └──BinOp: /
+    │       │       │           ├──BinOp: *
+    │       │       │           │   ├──ID: b2
+    │       │       │           │   └──ID: y
+    │       │       │           └──BinOp: -
+    │       │       │               ├──ID: z
+    │       │       │               └──ID: x
+    │       │       └──Statements
+    │       │           └──Assign
+    │       │               ├──ID: x
+    │       │               └──BinOp: +
+    │       │                   ├──ID: x
+    │       │                   └──BinOp: /
+    │       │                       ├──BinOp: *
+    │       │                       │   ├──ID: y
+    │       │                       │   └──ID: z
+    │       │                       └──ID: b1
+    │       ├──If
+    │       │   ├──RelOp: <
+    │       │   │   ├──ID: x
+    │       │   │   └──ID: y
+    │       │   ├──Statements
+    │       │   │   └──If
+    │       │   │       ├──RelOp: >
+    │       │   │       │   ├──ID: y
+    │       │   │       │   └──ID: z
+    │       │   │       ├──Statements
+    │       │   │       │   └──Assign
+    │       │   │       │       ├──ID: x
+    │       │   │       │       └──BinOp: *
+    │       │   │       │           ├──ID: x
+    │       │   │       │           └──Num: 2
+    │       │   │       └──Statements
+    │       │   │           └──If
+    │       │   │               ├──Or
+    │       │   │               │   ├──And
+    │       │   │               │   │   ├──RelOp: >
+    │       │   │               │   │   │   ├──ID: z
+    │       │   │               │   │   │   └──ID: x
+    │       │   │               │   │   └──ID: flag1
+    │       │   │               │   └──Not
+    │       │   │               │       └──ID: flag2
+    │       │   │               └──Statements
+    │       │   │                   └──Assign
+    │       │   │                       ├──ID: x
+    │       │   │                       └──BinOp: -
+    │       │   │                           ├──BinOp: +
+    │       │   │                           │   ├──ID: x
+    │       │   │                           │   └──ID: y
+    │       │   │                           └──ID: z
+    │       │   └──Statements
+    │       │       └──If
+    │       │           ├──ID: flag2
+    │       │           ├──Statements
+    │       │           │   └──Assign
+    │       │           │       ├──ID: x
+    │       │           │       └──BinOp: +
+    │       │           │           ├──BinOp: /
+    │       │           │           │   ├──BinOp: *
+    │       │           │           │   │   ├──ID: x
+    │       │           │           │   │   └──ID: z
+    │       │           │           │   └──ID: y
+    │       │           │           └──ID: b1
+    │       │           └──Statements
+    │       │               └──Assign
+    │       │                   ├──ID: x
+    │       │                   └──BinOp: *
+    │       │                       ├──BinOp: /
+    │       │                       │   ├──ID: x
+    │       │                       │   └──BinOp: +
+    │       │                       │       ├──ID: y
+    │       │                       │       └──Num: 1
+    │       │                       └──BinOp: -
+    │       │                           ├──ID: z
+    │       │                           └──Num: 1
+    │       ├──VarDecl
+    │       │   ├──ID: result
+    │       │   ├──Type: int
+    │       │   └──Call
+    │       │       ├──ID: deepNestedFunction
+    │       │       └──ExpList
+    │       │           ├──BinOp: -
+    │       │           │   ├──BinOp: +
+    │       │           │   │   ├──ID: y
+    │       │           │   │   └──ID: z
+    │       │           │   └──BinOp: *
+    │       │           │       ├──ID: b1
+    │       │           │       └──Num: 2
+    │       │           └──ID: x
+    │       ├──Call
+    │       │   ├──ID: printResult
+    │       │   └──ExpList
+    │       │       └──ID: result
+    │       ├──If
+    │       │   ├──Or
+    │       │   │   ├──ID: flag1
+    │       │   │   └──Not
+    │       │   │       └──ID: flag2
+    │       │   ├──Statements
+    │       │   │   └──Assign
+    │       │   │       ├──ID: result
+    │       │   │       └──Call
+    │       │   │           ├──ID: complexLogic
+    │       │   │           └──ExpList
+    │       │   │               ├──ID: z
+    │       │   │               ├──ID: y
+    │       │   │               └──ID: x
+    │       │   └──Statements
+    │       │       └──Assign
+    │       │           ├──ID: result
+    │       │           └──BinOp: *
+    │       │               ├──Call
+    │       │               │   ├──ID: precedenceTest
+    │       │               │   └──ExpList
+    │       │               │       ├──ID: z
+    │       │               │       ├──ID: y
+    │       │               │       └──ID: x
+    │       │               └──Call
+    │       │                   ├──ID: recursiveFactorial
+    │       │                   └──ExpList
+    │       │                       └──Num: 5
+    │       ├──Call
+    │       │   ├──ID: printResult
+    │       │   └──ExpList
+    │       │       └──ID: result
+    │       ├──If
+    │       │   ├──Or
+    │       │   │   ├──Or
+    │       │   │   │   ├──And
+    │       │   │   │   │   ├──RelOp: >
+    │       │   │   │   │   │   ├──ID: x
+    │       │   │   │   │   │   └──ID: y
+    │       │   │   │   │   └──RelOp: !=
+    │       │   │   │   │       ├──ID: y
+    │       │   │   │   │       └──ID: z
+    │       │   │   │   └──And
+    │       │   │   │       ├──RelOp: <=
+    │       │   │   │       │   ├──ID: x
+    │       │   │   │       │   └──ID: z
+    │       │   │   │       └──Not
+    │       │   │   │           └──ID: flag1
+    │       │   │   └──ID: flag2
+    │       │   └──Statements
+    │       │       └──Call
+    │       │           ├──ID: printResult
+    │       │           └──ExpList
+    │       │               └──BinOp: +
+    │       │                   ├──BinOp: +
+    │       │                   │   ├──ID: x
+    │       │                   │   └──ID: y
+    │       │                   └──ID: z
+    │       ├──VarDecl
+    │       │   ├──ID: i
+    │       │   ├──Type: int
+    │       │   └──Num: 0
+    │       ├──While
+    │       │   ├──RelOp: <
+    │       │   │   ├──ID: i
+    │       │   │   └──Num: 100
+    │       │   └──Statements
+    │       │       ├──If
+    │       │       │   ├──RelOp: ==
+    │       │       │   │   ├──BinOp: *
+    │       │       │   │   │   ├──BinOp: /
+    │       │       │   │   │   │   ├──ID: i
+    │       │       │   │   │   │   └──Num: 2
+    │       │       │   │   │   └──Num: 2
+    │       │       │   │   └──ID: i
+    │       │       │   ├──Statements
+    │       │       │   │   └──Call
+    │       │       │   │       ├──ID: printResult
+    │       │       │   │       └──ExpList
+    │       │       │   │           └──ID: i
+    │       │       │   └──If
+    │       │       │       ├──RelOp: ==
+    │       │       │       │   ├──BinOp: *
+    │       │       │       │   │   ├──BinOp: /
+    │       │       │       │   │   │   ├──ID: i
+    │       │       │       │   │   │   └──Num: 3
+    │       │       │       │   │   └──Num: 3
+    │       │       │       │   └──ID: i
+    │       │       │       ├──Statements
+    │       │       │       │   └──Call
+    │       │       │       │       ├──ID: printResult
+    │       │       │       │       └──ExpList
+    │       │       │       │           └──BinOp: *
+    │       │       │       │               ├──ID: i
+    │       │       │       │               └──Num: 2
+    │       │       │       └──Statements
+    │       │       │           └──Call
+    │       │       │               ├──ID: printResult
+    │       │       │               └──ExpList
+    │       │       │                   └──BinOp: *
+    │       │       │                       ├──ID: i
+    │       │       │                       └──Num: 3
+    │       │       └──Assign
+    │       │           ├──ID: i
+    │       │           └──BinOp: +
+    │       │               ├──ID: i
+    │       │               └──Num: 1
+    │       └──Return
+    │           └──Num: 0
+    ├──FuncDecl
+    │   ├──ID: deepNestedFunction
+    │   ├──Type: int
+    │   ├──Formals
+    │   │   ├──Formal
+    │   │   │   ├──ID: b
+    │   │   │   └──Type: int
+    │   │   └──Formal
+    │   │       ├──ID: a
+    │   │       └──Type: int
+    │   └──Statements
+    │       └──Return
+    │           └──Call
+    │               ├──ID: firstLevel
+    │               └──ExpList
+    │                   ├──BinOp: -
+    │                   │   ├──ID: b
+    │                   │   └──ID: a
+    │                   └──BinOp: +
+    │                       ├──ID: a
+    │                       └──ID: b
+    ├──FuncDecl
+    │   ├──ID: firstLevel
+    │   ├──Type: int
+    │   ├──Formals
+    │   │   ├──Formal
+    │   │   │   ├──ID: y
+    │   │   │   └──Type: int
+    │   │   └──Formal
+    │   │       ├──ID: x
+    │   │       └──Type: int
+    │   └──Statements
+    │       └──Return
+    │           └──Call
+    │               ├──ID: secondLevel
+    │               └──ExpList
+    │                   ├──BinOp: -
+    │                   │   ├──ID: y
+    │                   │   └──BinOp: /
+    │                   │       ├──ID: x
+    │                   │       └──Num: 2
+    │                   └──BinOp: *
+    │                       ├──BinOp: +
+    │                       │   ├──ID: x
+    │                       │   └──ID: y
+    │                       └──Num: 2
+    ├──FuncDecl
+    │   ├──ID: secondLevel
+    │   ├──Type: int
+    │   ├──Formals
+    │   │   ├──Formal
+    │   │   │   ├──ID: q
+    │   │   │   └──Type: int
+    │   │   └──Formal
+    │   │       ├──ID: p
+    │   │       └──Type: int
+    │   └──Statements
+    │       └──If
+    │           ├──RelOp: >
+    │           │   ├──ID: p
+    │           │   └──ID: q
+    │           ├──Statements
+    │           │   └──Return
+    │           │       └──Call
+    │           │           ├──ID: recursiveFactorial
+    │           │           └──ExpList
+    │           │               └──BinOp: +
+    │           │                   ├──BinOp: -
+    │           │                   │   ├──ID: p
+    │           │                   │   └──ID: q
+    │           │                   └──BinOp: /
+    │           │                       ├──BinOp: *
+    │           │                       │   ├──ID: p
+    │           │                       │   └──ID: q
+    │           │                       └──BinOp: +
+    │           │                           ├──ID: p
+    │           │                           └──Num: 1
+    │           └──Statements
+    │               └──Return
+    │                   └──Call
+    │                       ├──ID: thirdLevel
+    │                       └──ExpList
+    │                           ├──BinOp: -
+    │                           │   ├──BinOp: *
+    │                           │   │   ├──ID: q
+    │                           │   │   └──Num: 2
+    │                           │   └──ID: p
+    │                           └──BinOp: -
+    │                               ├──BinOp: +
+    │                               │   ├──BinOp: *
+    │                               │   │   ├──ID: p
+    │                               │   │   └──Num: 2
+    │                               │   └──BinOp: /
+    │                               │       ├──ID: q
+    │                               │       └──Num: 3
+    │                               └──BinOp: -
+    │                                   ├──ID: p
+    │                                   └──ID: q
+    ├──FuncDecl
+    │   ├──ID: thirdLevel
+    │   ├──Type: int
+    │   ├──Formals
+    │   │   ├──Formal
+    │   │   │   ├──ID: n
+    │   │   │   └──Type: int
+    │   │   └──Formal
+    │   │       ├──ID: m
+    │   │       └──Type: int
+    │   └──Statements
+    │       └──If
+    │           ├──RelOp: ==
+    │           │   ├──ID: m
+    │           │   └──ID: n
+    │           ├──Statements
+    │           │   └──Return
+    │           │       └──Num: 1
+    │           └──If
+    │               ├──RelOp: >
+    │               │   ├──ID: m
+    │               │   └──ID: n
+    │               ├──Statements
+    │               │   └──Return
+    │               │       └──BinOp: +
+    │               │           ├──BinOp: -
+    │               │           │   ├──ID: m
+    │               │           │   └──ID: n
+    │               │           └──Call
+    │               │               ├──ID: deepNestedFunction
+    │               │               └──ExpList
+    │               │                   ├──BinOp: /
+    │               │                   │   ├──BinOp: *
+    │               │                   │   │   ├──ID: n
+    │               │                   │   │   └──Num: 2
+    │               │                   │   └──BinOp: +
+    │               │                   │       ├──ID: m
+    │               │                   │       └──Num: 1
+    │               │                   └──BinOp: *
+    │               │                       ├──BinOp: +
+    │               │                       │   ├──BinOp: /
+    │               │                       │   │   ├──ID: m
+    │               │                       │   │   └──Num: 2
+    │               │                       │   └──ID: n
+    │               │                       └──BinOp: -
+    │               │                           ├──ID: m
+    │               │                           └──ID: n
+    │               └──Statements
+    │                   └──Return
+    │                       └──BinOp: +
+    │                           ├──BinOp: -
+    │                           │   ├──ID: n
+    │                           │   └──ID: m
+    │                           └──Call
+    │                               ├──ID: thirdLevel
+    │                               └──ExpList
+    │                                   ├──BinOp: -
+    │                                   │   ├──ID: n
+    │                                   │   └──Num: 1
+    │                                   └──BinOp: -
+    │                                       ├──BinOp: *
+    │                                       │   ├──BinOp: +
+    │                                       │   │   ├──ID: m
+    │                                       │   │   └──Num: 1
+    │                                       │   └──Num: 2
+    │                                       └──BinOp: /
+    │                                           ├──ID: n
+    │                                           └──Num: 3
+    ├──FuncDecl
+    │   ├──ID: recursiveFactorial
+    │   ├──Type: int
+    │   ├──Formals
+    │   │   └──Formal
+    │   │       ├──ID: num
+    │   │       └──Type: int
+    │   └──Statements
+    │       └──If
+    │           ├──RelOp: ==
+    │           │   ├──ID: num
+    │           │   └──Num: 0
+    │           ├──Statements
+    │           │   └──Return
+    │           │       └──Num: 1
+    │           └──Statements
+    │               └──Return
+    │                   └──BinOp: /
+    │                       ├──BinOp: *
+    │                       │   ├──ID: num
+    │                       │   └──Call
+    │                       │       ├──ID: recursiveFactorial
+    │                       │       └──ExpList
+    │                       │           └──BinOp: -
+    │                       │               ├──ID: num
+    │                       │               └──Num: 1
+    │                       └──BinOp: +
+    │                           ├──ID: num
+    │                           └──Num: 1
+    ├──FuncDecl
+    │   ├──ID: precedenceTest
+    │   ├──Type: int
+    │   ├──Formals
+    │   │   ├──Formal
+    │   │   │   ├──ID: z
+    │   │   │   └──Type: int
+    │   │   ├──Formal
+    │   │   │   ├──ID: y
+    │   │   │   └──Type: int
+    │   │   └──Formal
+    │   │       ├──ID: x
+    │   │       └──Type: int
+    │   └──Statements
+    │       ├──VarDecl
+    │       │   ├──ID: result
+    │       │   ├──Type: int
+    │       │   └──BinOp: -
+    │       │       ├──BinOp: +
+    │       │       │   ├──BinOp: +
+    │       │       │   │   ├──ID: x
+    │       │       │   │   └──BinOp: /
+    │       │       │   │       ├──BinOp: *
+    │       │       │   │       │   ├──ID: y
+    │       │       │   │       │   └──ID: z
+    │       │       │   │       └──BinOp: -
+    │       │       │   │           ├──ID: x
+    │       │       │   │           └──ID: z
+    │       │       │   └──BinOp: *
+    │       │       │       ├──ID: y
+    │       │       │       └──ID: z
+    │       │       └──BinOp: /
+    │       │           ├──ID: x
+    │       │           └──ID: y
+    │       └──Return
+    │           └──BinOp: *
+    │               ├──ID: result
+    │               └──BinOp: +
+    │                   ├──ID: x
+    │                   └──BinOp: /
+    │                       ├──ID: y
+    │                       └──BinOp: -
+    │                           ├──ID: z
+    │                           └──BinOp: *
+    │                               ├──ID: x
+    │                               └──Num: 2
+    ├──FuncDecl
+    │   ├──ID: complexLogic
+    │   ├──Type: int
+    │   ├──Formals
+    │   │   ├──Formal
+    │   │   │   ├──ID: c
+    │   │   │   └──Type: int
+    │   │   ├──Formal
+    │   │   │   ├──ID: b
+    │   │   │   └──Type: int
+    │   │   └──Formal
+    │   │       ├──ID: a
+    │   │       └──Type: int
+    │   └──Statements
+    │       └──If
+    │           ├──And
+    │           │   ├──RelOp: >
+    │           │   │   ├──ID: a
+    │           │   │   └──ID: b
+    │           │   └──RelOp: >
+    │           │       ├──ID: b
+    │           │       └──ID: c
+    │           ├──Statements
+    │           │   └──Return
+    │           │       └──BinOp: +
+    │           │           ├──Call
+    │           │           │   ├──ID: deepNestedFunction
+    │           │           │   └──ExpList
+    │           │           │       ├──ID: b
+    │           │           │       └──ID: a
+    │           │           └──Call
+    │           │               ├──ID: recursiveFactorial
+    │           │               └──ExpList
+    │           │                   └──ID: c
+    │           └──If
+    │               ├──Or
+    │               │   ├──RelOp: <
+    │               │   │   ├──ID: a
+    │               │   │   └──ID: b
+    │               │   └──RelOp: <
+    │               │       ├──ID: c
+    │               │       └──ID: a
+    │               ├──Statements
+    │               │   └──Return
+    │               │       └──BinOp: +
+    │               │           ├──BinOp: -
+    │               │           │   ├──Call
+    │               │           │   │   ├──ID: thirdLevel
+    │               │           │   │   └──ExpList
+    │               │           │   │       ├──ID: b
+    │               │           │   │       └──ID: a
+    │               │           │   └──Call
+    │               │           │       ├──ID: secondLevel
+    │               │           │       └──ExpList
+    │               │           │           ├──ID: a
+    │               │           │           └──ID: c
+    │               │           └──Call
+    │               │               ├──ID: precedenceTest
+    │               │               └──ExpList
+    │               │                   ├──ID: c
+    │               │                   ├──ID: b
+    │               │                   └──ID: a
+    │               └──Statements
+    │                   └──Return
+    │                       └──BinOp: +
+    │                           ├──BinOp: +
+    │                           │   ├──ID: a
+    │                           │   └──ID: b
+    │                           └──ID: c
+    ├──FuncDecl
+    │   ├──ID: stressTestLoops
+    │   ├──Type: void
+    │   ├──Formals
+    │   └──Statements
+    │       ├──VarDecl
+    │       │   ├──ID: x
+    │       │   ├──Type: int
+    │       │   └──Num: 0
+    │       └──While
+    │           ├──RelOp: <
+    │           │   ├──ID: x
+    │           │   └──Num: 50
+    │           └──Statements
+    │               ├──VarDecl
+    │               │   ├──ID: y
+    │               │   ├──Type: int
+    │               │   └──Num: 0
+    │               ├──While
+    │               │   ├──RelOp: <
+    │               │   │   ├──ID: y
+    │               │   │   └──Num: 50
+    │               │   └──Statements
+    │               │       ├──If
+    │               │       │   ├──RelOp: ==
+    │               │       │   │   ├──BinOp: *
+    │               │       │   │   │   ├──BinOp: /
+    │               │       │   │   │   │   ├──BinOp: +
+    │               │       │   │   │   │   │   ├──ID: x
+    │               │       │   │   │   │   │   └──ID: y
+    │               │       │   │   │   │   └──Num: 3
+    │               │       │   │   │   └──Num: 3
+    │               │       │   │   └──BinOp: +
+    │               │       │   │       ├──ID: x
+    │               │       │   │       └──ID: y
+    │               │       │   ├──Statements
+    │               │       │   │   └──Call
+    │               │       │   │       ├──ID: printResult
+    │               │       │   │       └──ExpList
+    │               │       │   │           └──BinOp: +
+    │               │       │   │               ├──ID: x
+    │               │       │   │               └──ID: y
+    │               │       │   └──Statements
+    │               │       │       └──Call
+    │               │       │           ├──ID: printResult
+    │               │       │           └──ExpList
+    │               │       │               └──BinOp: *
+    │               │       │                   ├──BinOp: +
+    │               │       │                   │   ├──ID: x
+    │               │       │                   │   └──ID: y
+    │               │       │                   └──Num: 2
+    │               │       └──Assign
+    │               │           ├──ID: y
+    │               │           └──BinOp: +
+    │               │               ├──ID: y
+    │               │               └──Num: 1
+    │               └──Assign
+    │                   ├──ID: x
+    │                   └──BinOp: +
+    │                       ├──ID: x
+    │                       └──Num: 1
+    ├──FuncDecl
+    │   ├──ID: nestedConditions
+    │   ├──Type: void
+    │   ├──Formals
+    │   └──Statements
+    │       ├──VarDecl
+    │       │   ├──ID: x
+    │       │   ├──Type: int
+    │       │   └──Num: 10
+    │       ├──VarDecl
+    │       │   ├──ID: y
+    │       │   ├──Type: int
+    │       │   └──Num: 20
+    │       ├──VarDecl
+    │       │   ├──ID: z
+    │       │   ├──Type: int
+    │       │   └──Num: 30
+    │       └──If
+    │           ├──RelOp: >
+    │           │   ├──ID: x
+    │           │   └──ID: y
+    │           ├──Statements
+    │           │   └──If
+    │           │       ├──RelOp: <
+    │           │       │   ├──ID: y
+    │           │       │   └──ID: z
+    │           │       ├──Statements
+    │           │       │   └──If
+    │           │       │       ├──RelOp: >
+    │           │       │       │   ├──ID: z
+    │           │       │       │   └──ID: x
+    │           │       │       ├──Statements
+    │           │       │       │   └──Call
+    │           │       │       │       ├──ID: printResult
+    │           │       │       │       └──ExpList
+    │           │       │       │           └──BinOp: *
+    │           │       │       │               ├──BinOp: *
+    │           │       │       │               │   ├──ID: x
+    │           │       │       │               │   └──ID: y
+    │           │       │       │               └──ID: z
+    │           │       │       └──Statements
+    │           │       │           └──Call
+    │           │       │               ├──ID: printResult
+    │           │       │               └──ExpList
+    │           │       │                   └──BinOp: +
+    │           │       │                       ├──BinOp: +
+    │           │       │                       │   ├──ID: x
+    │           │       │                       │   └──ID: y
+    │           │       │                       └──ID: z
+    │           │       └──Statements
+    │           │           └──Call
+    │           │               ├──ID: printResult
+    │           │               └──ExpList
+    │           │                   └──BinOp: *
+    │           │                       ├──BinOp: -
+    │           │                       │   ├──ID: x
+    │           │                       │   └──ID: y
+    │           │                       └──BinOp: +
+    │           │                           ├──ID: z
+    │           │                           └──ID: x
+    │           └──Statements
+    │               └──If
+    │                   ├──RelOp: >
+    │                   │   ├──ID: z
+    │                   │   └──ID: y
+    │                   ├──Statements
+    │                   │   └──Call
+    │                   │       ├──ID: printResult
+    │                   │       └──ExpList
+    │                   │           └──BinOp: *
+    │                   │               ├──ID: z
+    │                   │               └──ID: z
+    │                   └──Statements
+    │                       └──Call
+    │                           ├──ID: printResult
+    │                           └──ExpList
+    │                               └──BinOp: +
+    │                                   ├──ID: y
+    │                                   └──ID: y
+    ├──FuncDecl
+    │   ├──ID: finalTestSuite
+    │   ├──Type: void
+    │   ├──Formals
+    │   └──Statements
+    │       ├──Call
+    │       │   ├──ID: nestedConditions
+    │       │   └──ExpList
+    │       ├──Call
+    │       │   ├──ID: stressTestLoops
+    │       │   └──ExpList
+    │       ├──Call
+    │       │   ├──ID: printResult
+    │       │   └──ExpList
+    │       │       └──Call
+    │       │           ├──ID: precedenceTest
+    │       │           └──ExpList
+    │       │               ├──Num: 30
+    │       │               ├──Num: 20
+    │       │               └──Num: 10
+    │       └──Call
+    │           ├──ID: printResult
+    │           └──ExpList
+    │               └──Call
+    │                   ├──ID: complexLogic
+    │                   └──ExpList
+    │                       ├──Num: 35
+    │                       ├──Num: 25
+    │                       └──Num: 15
+    └──FuncDecl
+        ├──ID: main
+        ├──Type: int
+        ├──Formals
+        └──Statements
+            ├──Call
+            │   ├──ID: print
+            │   └──ExpList
+            │       └──String: Starting comprehensive stress test...
+            ├──Call
+            │   ├──ID: finalTestSuite
+            │   └──ExpList
+            └──Return
+                └──Num: 0

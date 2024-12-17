@@ -1,0 +1,1 @@
+void declareVar() { int x }

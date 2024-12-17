@@ -1,0 +1,15 @@
+└──Funcs
+    └──FuncDecl
+        ├──ID: test
+        ├──Type: void
+        ├──Formals
+        └──Statements
+            ├──VarDecl
+            │   ├──ID: x
+            │   ├──Type: int
+            │   └──Num: 10
+            └──Assign
+                ├──ID: x
+                └──BinOp: +
+                    ├──ID: x
+                    └──Num: 5

@@ -1,0 +1,70 @@
+└──Funcs
+    ├──FuncDecl
+    │   ├──ID: main
+    │   ├──Type: void
+    │   ├──Formals
+    │   └──Statements
+    │       ├──VarDecl
+    │       │   ├──ID: x
+    │       │   ├──Type: int
+    │       │   └──BinOp: *
+    │       │       ├──BinOp: +
+    │       │       │   ├──Num: 4
+    │       │       │   └──Num: 7
+    │       │       └──Num: 12
+    │       ├──VarDecl
+    │       │   ├──ID: y
+    │       │   ├──Type: byte
+    │       │   └──NumB: 1
+    │       ├──Call
+    │       │   ├──ID: intFun
+    │       │   └──ExpList
+    │       │       ├──ID: y
+    │       │       ├──ID: x
+    │       │       ├──ID: x
+    │       │       └──RelOp: <
+    │       │           ├──ID: x
+    │       │           └──ID: y
+    │       └──VarDecl
+    │           ├──ID: z
+    │           └──Type: int
+    └──FuncDecl
+        ├──ID: intFun
+        ├──Type: int
+        ├──Formals
+        │   ├──Formal
+        │   │   ├──ID: e
+        │   │   └──Type: byte
+        │   ├──Formal
+        │   │   ├──ID: d
+        │   │   └──Type: int
+        │   ├──Formal
+        │   │   ├──ID: c
+        │   │   └──Type: int
+        │   └──Formal
+        │       ├──ID: a
+        │       └──Type: bool
+        └──Statements
+            ├──VarDecl
+            │   ├──ID: tmp
+            │   ├──Type: int
+            │   └──BinOp: +
+            │       ├──ID: c
+            │       └──ID: e
+            ├──VarDecl
+            │   ├──ID: b
+            │   ├──Type: bool
+            │   └──ID: a
+            ├──If
+            │   ├──And
+            │   │   ├──ID: a
+            │   │   └──RelOp: <
+            │   │       ├──ID: c
+            │   │       └──ID: d
+            │   └──Statements
+            │       └──VarDecl
+            │           ├──ID: j
+            │           ├──Type: byte
+            │           └──ID: e
+            └──Return
+                └──ID: tmp

@@ -1,0 +1,1 @@
+void updateVar() { int x; x 5; }

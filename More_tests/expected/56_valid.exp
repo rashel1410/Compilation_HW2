@@ -1,0 +1,18 @@
+└──Funcs
+    └──FuncDecl
+        ├──ID: main
+        ├──Type: void
+        ├──Formals
+        └──Statements
+            ├──VarDecl
+            │   ├──ID: x
+            │   ├──Type: int
+            │   └──Num: 12
+            ├──Call
+            │   ├──ID: printi
+            │   └──ExpList
+            │       └──NumB: 12
+            └──Call
+                ├──ID: print
+                └──ExpList
+                    └──String: foo

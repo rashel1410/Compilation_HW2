@@ -1,0 +1,1 @@
+void block() { { int x = 5; }

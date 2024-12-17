@@ -1,0 +1,10 @@
+└──Funcs
+    └──FuncDecl
+        ├──ID: printMessage
+        ├──Type: void
+        ├──Formals
+        └──Statements
+            └──Call
+                ├──ID: print
+                └──ExpList
+                    └──String: Hello

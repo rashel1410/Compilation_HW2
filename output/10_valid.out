@@ -1,0 +1,21 @@
+└──Funcs
+    └──FuncDecl
+        ├──ID: sumThree
+        ├──Type: int
+        ├──Formals
+        │   ├──Formal
+        │   │   ├──ID: c
+        │   │   └──Type: int
+        │   ├──Formal
+        │   │   ├──ID: b
+        │   │   └──Type: int
+        │   └──Formal
+        │       ├──ID: a
+        │       └──Type: int
+        └──Statements
+            └──Return
+                └──BinOp: +
+                    ├──BinOp: +
+                    │   ├──ID: a
+                    │   └──ID: b
+                    └──ID: c

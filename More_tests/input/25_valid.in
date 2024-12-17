@@ -1,0 +1,4 @@
+
+void continueTest() {
+    while (1) { continue; }
+}

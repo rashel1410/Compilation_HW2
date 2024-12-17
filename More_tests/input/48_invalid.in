@@ -1,0 +1,136 @@
+// Main function to test all constructs
+int main() {
+    // Variable declarations and assignments
+    int x = 10;
+    byte b = 01010b;
+    // bool flag = false;
+
+    // Simple statements
+    int y;
+    y = x + 5;
+    byte z = (byte) (x * 2);
+
+    // Conditional with else
+    if (y > 15) {
+        x = x + 1;
+    } else {
+        x = x - 1;
+    }
+
+    // Nested conditional
+    if (flag) {
+        if (x == 0) {
+            y = 1;
+        } else {
+            y = 2;
+        }
+    }
+	
+	// Dangling Else
+    if (flag) {
+        if (x == 0) 
+            y = 1;
+         else
+            y = 2;
+        
+    }
+	
+	// Dangling Else2
+    if (flag) {
+        if (x == 0) {
+            y = 1;
+			if (y >= 1)
+				print("bigger");
+			else
+				print("smaller");
+		}
+         else
+            y = 2;
+        
+    }
+
+    // Loop
+    while (x > 0) {
+        x = x - 1;
+        if (x == 5) {
+            break;
+        }
+        continue;
+    }
+
+    // Function calls
+    printResult(x, y);
+    int sum = add(x, y);
+
+    // Return statement
+    return sum;
+}
+
+// Function declarations with various parameters
+int add(int a, int b) {
+    return a + b;
+}
+
+byte multiply(byte a, byte b) {
+    return a * b;
+}
+
+bool isGreater(int a, int b) {
+    return a > b;
+}
+
+void printResult(int a, int b) {
+    print("The result is:");
+    print(a + b);
+}
+
+// Type casting example
+int castExample() {
+    byte b = 11110b;
+    return (int) b;
+}
+
+// Logical and relational operations
+bool logicalOperations() {
+    int a = 10;
+    int b = 20;
+    return (a < b) and not (a == b);
+}
+
+// Complex expressions
+int complexExpressions() {
+    int a = 5;
+    int b = (int) (a + 10) * (a - 1);
+    return b;
+}
+
+// Nested loops
+void nestedLoops() {
+    int i = 0;
+    int j = 0;
+    while (i < 10) {
+        while (j < 5) {
+            print(i * j);
+            j = j + 1;
+        }
+        j = 0;
+        i = i + 1;
+    }
+}
+
+// Testing boolean literals
+void testBooleans() {
+    bool a = true;
+    bool b = false;
+    if (a or b) {
+        print("At least one is true");
+    } else {
+        print("Both are false");
+    }
+}
+
+// Return with no value
+void doNothing() {
+    return;
+}
+
